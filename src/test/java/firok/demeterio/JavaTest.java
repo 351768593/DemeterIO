@@ -1,7 +1,5 @@
 package firok.demeterio;
 
-import firok.demeterio.exception.InitScriptException;
-import firok.demeterio.exception.NoSuchScriptException;
 import firok.demeterio.script.java.JavaClassScript;
 import firok.demeterio.script.java.JavaJarScript;
 import firok.demeterio.store.FilesystemSource;
@@ -10,14 +8,13 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.net.URL;
 import java.util.Map;
 
 public class JavaTest
 {
 	@Test
-	public void testDirectly() throws IOException, InitScriptException, NoSuchScriptException, InterruptedException
+	public void testDirectly() throws Exception
 	{
 		var cpr1 = JavaTest.class.getResource("/TC1.java");
 		Assertions.assertNotNull(cpr1);

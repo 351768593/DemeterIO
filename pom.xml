@@ -6,7 +6,7 @@
 
     <groupId>firok</groupId>
     <artifactId>demeterio</artifactId>
-    <version>17.1.0</version>
+    <version>17.2.0</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

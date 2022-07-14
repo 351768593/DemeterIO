@@ -17,12 +17,12 @@ public class JavaClassScript extends AbstractScript
 	protected final ScriptClassLoader cl;
 	protected final Class<?> classScript;
 	protected final Object instance;
-	public JavaClassScript(AbstractSource source) throws InitScriptException
+	public JavaClassScript(byte[] bytecode) throws InitScriptException
 	{
 		this.cl = new ScriptClassLoader();
 		try
 		{
-			var classLoad = cl.loadByte(source.readBytes());
+			var classLoad = cl.loadByte(bytecode);
 			this.classScript = classLoad;
 			this.instance = classLoad.getConstructor().newInstance();
 		}
@@ -30,7 +30,10 @@ public class JavaClassScript extends AbstractScript
 		{
 			throw new InitScriptException(e);
 		}
-
+	}
+	public JavaClassScript(AbstractSource source) throws Exception
+	{
+		this(source.readBytes());
 	}
 
 	/**

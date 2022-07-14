@@ -25,7 +25,11 @@ public class JavascriptScript extends AbstractScript
 	private final String script;
 	public JavascriptScript(AbstractSource source) throws Exception
 	{
-		this.script = source.readString();
+		this(source.readString());
+	}
+	public JavascriptScript(String script)
+	{
+		this.script = script;
 	}
 
 	@SuppressWarnings("unchecked")
